@@ -242,7 +242,7 @@ This option allows you to obtain information and similar image that are availabl
 ```
 Reconspider >> 6
 REVERSE IMAGE SEARCH (PATH) >> /root/Downloads/images.jpeg
-Open Search Result in web broser? (Y/N) : y
+Open Search Result in web browser? (Y/N) : y
 ```
 
 **7. HONEYPOT**

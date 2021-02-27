@@ -9,14 +9,17 @@ def whoami(target,post):
                 +'(([2][5][0-5])|([2][0-4][0-9])|([0-1]?[0-9]?[0-9]))')
 	match = ip.search(getweb)
 	if match:
-		#target=match.group()
-		w = whois.whois(target)
-		print("Domain Name:"+ str(w['domain_name']))
-		print("Register:"+str(w['registrar']))
+		# target=match.group()
+		w = whois.query(target).__dict__
+		print("Domain Name:"+ str(w['name']))
+		if w['registrar']:
+			print("Register:"+str(w['registrar']))
+
 		try:
 			print("Whois Server:"+str(w['whois_server']))
 		except Exception as e:
 			print(e)
+		
 		print("Server:"+str(w['name_servers']))
 		print("Emails:"+str(w['emails']))
 		try:

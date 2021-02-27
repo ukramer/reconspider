@@ -149,6 +149,9 @@ def crawler(target,port):
 
 			if len(total) is not 0:
 				print('[+]' + ' Dumping Links in '  + '{}/dumps/{}'.format(path, file))
+				if not os.path.exists(path+'/dumps'):
+					os.mkdir(path+'/dumps')
+
 				with open(path+'/dumps/{}'.format('{}.dump'.format(domain)), 'w') as dumpfile:
 					dumpfile.write('URL : {}'.format(target) + '\n\n')
 					try:
@@ -163,7 +166,6 @@ def crawler(target,port):
 					dumpfile.write('\nExternal Links    : ' + str(len(ext_total)))
 					dumpfile.write('\nImages Links      : ' + str(len(img_total)))
 					dumpfile.write('\nTotal Links Found : ' + str(len(total)) + '\n')
-					print(str(e))
 
 					if len(r_total) is not 0:
 						dumpfile.write('\nrobots :\n\n')

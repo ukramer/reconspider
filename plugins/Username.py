@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 
 out=[]
 
-def user(choice,username):
+def user(choice, username):
     if choice == '1':
         pass
     elif choice == '2':

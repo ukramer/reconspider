@@ -7,7 +7,7 @@ def reverseimagesearch(img):
         murl={'encoded_image': (img, open(img, 'rb')), 'image_content': ''}
         response = requests.post(surl, files=murl, allow_redirects=False)
         fetchUrl = response.headers['Location']
-        openWeb = input("Open Search Result in web broser? (Y/N) : ")
+        openWeb = input("Open Search Result in web browser? (Y/N) : ")
         if openWeb.upper() == 'Y':
             webbrowser.open(fetchUrl)
         else:

@@ -1,5 +1,6 @@
 import paramiko
 import socket
+import os
 
 def ssh(host, port):
     print("1. Default Port (22)")
@@ -20,7 +21,8 @@ def ssh(host, port):
                 s.close()
                 wordlist = input("Enter Wordlist location (Press Enter for Default Wordlist) : ")
                 if wordlist == '':
-                    f = open("src/telnet.ini", "r")
+                    dir_path = os.path.dirname(os.path.realpath(__file__))
+                    f = open("{}/src/ftp.ini".format(dir_path), "r")
                     f1 = f.readlines()
                 else:
                     f = open(wordlist, "r")
@@ -74,7 +76,8 @@ def ssh(host, port):
                 s.close()
                 wordlist = input("Enter Wordlist location (Press Enter for Default Wordlist) : ")
                 if wordlist == '':
-                    f = open("src/ssh.ini", "r")
+                    dir_path = os.path.dirname(os.path.realpath(__file__))
+                    f = open("{}/src/ssh.ini".format(dir_path), "r")
                     f1 = f.readlines()
                 else:
                     f = open(wordlist, "r")

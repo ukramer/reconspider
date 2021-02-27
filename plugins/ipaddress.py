@@ -52,7 +52,7 @@ def read_single_IP(IP):
         lons = response['longitude']
     maps_url = "https://maps.google.com/maps?q=%s,+%s" % (lats, lons)
     print("")
-    openWeb = input("Open GPS location in web broser? (Y/N) ")
+    openWeb = input("Open GPS location in web browser? (Y/N) ")
     if openWeb.upper() == 'Y':
         webbrowser.open(maps_url, new=2)
     else:
@@ -89,7 +89,7 @@ def heat_map(lats,lons):
     location = save_location + "/heatmap.html"
     gmap3.draw(location)
     print("Heatmap saved at " + location)
-    openWeb = input("Open Heatmap in web broser? (Y/N) : ")
+    openWeb = input("Open Heatmap in web browser? (Y/N) : ")
     if openWeb.upper() == 'Y':
         webbrowser.open(url=("file:///"+location))
     else:

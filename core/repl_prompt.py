@@ -44,7 +44,7 @@ def repl():  # Read–eval–print loop
         elif choice == 2:
             while 1:
                 host = input("HOST (URL / IP) >> ")
-                port = input("PORT >> ")
+                port = int(input("PORT >> "))
                 try:
                     if port == "":
                         port=80
@@ -115,10 +115,10 @@ def repl():  # Read–eval–print loop
         elif choice == 11:
             while 1:
                 print("\n1.Facebook \n2.Twitter \n3.Instagram\n")
-                username = input("Username >> ")
                 choice = input("choice >> ")
+                username = input("Username >> ")
                 break
-            user(choice,username)
+            user(choice, username)
             continue
 
         elif choice == 12:

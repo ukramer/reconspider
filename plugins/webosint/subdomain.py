@@ -10,5 +10,5 @@ def SubDomain(host, port):
 
     subdomains = response.json()
 
-    for x in subdomains['domain_siblings']:
+    for x in subdomains['subdomains']:
         print(x)

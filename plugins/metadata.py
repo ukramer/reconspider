@@ -9,7 +9,7 @@ def get_exif(fn):
         i = Image.open(fn)
         info = i._getexif()
         if str(info) == "None":
-            print("Metadata is not Much Informative:")
+            print("Metadata is not Much Informative")
             return -1
         for tag, value in info.items():
             decoded = TAGS.get(tag, tag)
@@ -57,6 +57,6 @@ def map_it(lat, lon):
     # Creates the URL for the map using the latitude and longitude values
     maps_url = "https://maps.google.com/maps?q=%s,+%s" % (lat, lon)
     # Prompts the user to launch a web browser with the map
-    openWeb = input("Open GPS location in web broser? (Y/N) ")
+    openWeb = input("Open GPS location in web browser? (Y/N) ")
     if openWeb.upper() == 'Y':
         webbrowser.open(maps_url, new=2)
